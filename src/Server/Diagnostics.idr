@@ -22,6 +22,8 @@ import Server.Utils
 import System.File
 import System.Path
 
+import Libraries.Data.String.Extra
+
 keyword : Doc IdrisAnn -> Doc IdrisAnn
 keyword = annotate $ Syntax Keyword
 
