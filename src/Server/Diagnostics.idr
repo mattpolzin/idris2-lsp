@@ -125,6 +125,8 @@ pwarning (Deprecated s fcAndName) = do
                           ]
 pwarning (GenericWarn s) = pure $ pretty s
 pwarning (ParserWarning fc msg) = pure $ pretty msg
+pwarning (UnusedImports fname xs)
+    = pure $ pretty "Unused Imports in \{fname}:" <++> (pretty . join ", " $ forget xs)
 
 export
 perror : Ref Ctxt Defs
